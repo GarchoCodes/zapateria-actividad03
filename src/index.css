@@ -1,0 +1,66 @@
+  @import "tailwindcss";
+
+  @custom-variant dark (&:where(.dark, .dark *));
+
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.35s ease-out;
+  }
+
+  @keyframes slideOut {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+  }
+
+  .animate-slide-out {
+    animation: slideOut 0.3s ease-in forwards;
+  }
+
+  :root {
+    --bg-dark: oklch(0.92 0.04 262);
+    --bg: oklch(0.96 0.04 262);
+    --bg-light: oklch(1 0.04 262);
+    --text: oklch(0.15 0.08 262);
+    --text-muted: oklch(0.4 0.08 262);
+    --highlight: oklch(1 0.08 262);
+    --border: oklch(0.6 0.08 262);
+    --border-muted: oklch(0.7 0.08 262);
+    --primary: oklch(0.4 0.1 262);
+    --secondary: oklch(0.4 0.1 82);
+    --danger: oklch(0.5 0.08 30);
+    --warning: oklch(0.5 0.08 100);
+    --success: oklch(0.5 0.08 160);
+    --info: oklch(0.5 0.08 260);
+  }
+
+  body,
+  html {
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE y Edge */
+  }
+
+  body::-webkit-scrollbar,
+  html::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari y Opera */
+  }
